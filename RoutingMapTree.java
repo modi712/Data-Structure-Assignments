@@ -1,8 +1,4 @@
-//line 220
-
-
-
-
+//Created data type mobile phone
 class MobilePhone
 { protected int id;
   protected Boolean status;
@@ -117,6 +113,7 @@ class Myset
 	   else return true;
 	  
   }
+	
   public Boolean IsMember1(int x)
   {
     Node ptr = start;
@@ -298,25 +295,14 @@ protected Exchange parent = null;
 public Exchange()
 {
 id = 0;
-//MobilePhoneSet residentSet = new MobilePhoneSet();;
-//ExchangeList children  = new ExchangeList();;;
-//parent = null;
-  
 }
 
 public Exchange(int number)
 {
  id = number;
- //MobilePhoneSet residentSet = new MobilePhoneSet();
-//ExchangeList children; = new ExchangeList();
-//parent = null;
-
  }
  
- /*public Exchange parent()
- {
- return parent;
- }*/
+
 
  public int numChildren()
  {
@@ -336,10 +322,7 @@ public Exchange(int number)
     return ptr.getData(); 
  }
  
- /*public Boolean isRoot()
- {
-	 return parent == null;
- }*/
+
  
  public MobilePhoneSet residentSet()
  {
@@ -355,10 +338,7 @@ public Exchange(int number)
  {
 	 return children;
  }
-/* public void setParent(Exchange a)
- {
-	 parent = a;
- }*/
+
  public void setresidentSet(MobilePhoneSet x)
  {
 	 residentSet = x;
@@ -373,13 +353,6 @@ subtree.root = child(i);
 		 
 }
 
-/*public static void display1(Exchange a)
-{
-	System.out.println(a.getid());
-for(int j=0; j < a.numChildren(); j++)
-{System.out.println(a.child(j).getid());}
-	
-}*/
 
 }
 
@@ -467,23 +440,7 @@ class ExchangeList
 	   else return true;
 	  
   }
-    /*  Function to insert an element at begining  */
-    /*public void Insert(Exchange val)
-    {
-        Node nptr = new Node(val, null);
-       //if(!(IsMember(val)))		
-	   {size++ ;    
-        if(start == null) 
-        {
-            start = nptr;
-            end = start;
-        }
-        else 
-        {
-            nptr.setLink(start);
-            start = nptr;
-	   }}
-    } */
+   
 	  public void insert(Exchange val)
     {
         fode nptr = new fode(val,null);    
@@ -594,9 +551,7 @@ for (int j = 0; j < (root.numChildren()); j++)
 public String FindPhone(int x)
 {
   String y = findpath(x);
- // if(y.length() > 1) 
-  //{return y.substring(y.length() );}
-  //if(y.length() == 1){ return y;} 
+
   if( !y.equals(""))
   {String[] f = y.split(" ");
   return f[f.length - 1];}
@@ -678,8 +633,7 @@ public void switchOff(int a)
 public String query1(int a)
 {   if(containsNode(a))
 	{
-    //String e = "";
-	//if(root.getid() == a){root.residentSet().display();}
+    
 	if(root.numChildren() == 0){if (root.getid()==a) return root.residentSet().display();}
 	
 	else {if (root.getid() == a) return root.residentSet().display();
@@ -705,14 +659,7 @@ return "Not exist";
 
 
 }
-/*{
-	
-	if(root.getid() == a) 
-	{System.out.println(root.child(b).getid());}
-      else{ for(int j = 0; j <= (root.numChildren()-1); j++)
-  {root.subtree(j).query(a, b);}
-}
-}*/
+
 	
 	
 	
@@ -732,7 +679,7 @@ public String performAction(String actionMessage)
 		add(b, c);
 		
 		
-	//	System.out.println("hii");
+	
 	}
 	
 	if(ary[0].equals("queryNthChild"))
@@ -760,9 +707,9 @@ public String performAction(String actionMessage)
 
 	if(ary[0].equals("switchOffMobile"))
 	{int e = Integer.parseInt(ary[1]);
-		//int f = Integer.parseInt(ary[2]);
+		
  
-	//MobilePhone a = new MobilePhone(e); 
+	
 	switchOff(e);
 	}
 	
@@ -781,8 +728,7 @@ public String performAction(String actionMessage)
        //if(FindPhone(e) != -10)
        {System.out.println(actionMessage + ": " + LowestRouter1(e,f));
 	   return actionMessage + ": " + LowestRouter1(e,f);}
-	   //else {System.out.println("Error");
-	   //return "Error";}
+	   
 
     }
 	
@@ -796,7 +742,7 @@ public String performAction(String actionMessage)
 		return findCallPath(c,d);
 		
 		
-	//	System.out.println("hii");
+	
 	}
 	
 	if(ary[0].equals("movePhone"))
@@ -810,7 +756,7 @@ public String performAction(String actionMessage)
 		switchOn(a,d);
 		
 		
-	//	System.out.println("hii");
+	
 	}
 		
 	return"";	
